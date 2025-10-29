@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Temporal Commons Test Suite">
+    <test name="commons-unit-tests">
+        <classes>
+            <class name="io.ballerina.stdlib.temporal.commons.utils.ErrorUtilsTest"/>
+            <class name="io.ballerina.stdlib.temporal.commons.utils.TypeUtilsTest"/>
+        </classes>
+    </test>
+</suite>

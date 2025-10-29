@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="temporal-native-test-suite">
+    <test name="temporal-native-tests" preserve-order="true">
+        <classes>
+            <class name="io.ballerina.stdlib.temporal.runtime.client.ClientTest"/>
+            <class name="io.ballerina.stdlib.temporal.runtime.workflow.WorkflowContextTest"/>
+            <class name="io.ballerina.stdlib.temporal.runtime.activity.ActivityContextTest"/>
+        </classes>
+    </test>
+</suite>

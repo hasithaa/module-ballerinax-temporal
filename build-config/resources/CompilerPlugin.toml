@@ -1,0 +1,13 @@
+[package]
+org = "ballerina"
+name = "temporal"
+version = "@project.version@"
+
+[plugin]
+class = "io.ballerina.stdlib.temporal.compiler.TemporalCompilerPlugin"
+
+[[dependency]]
+path = "../commons/build/libs/temporal-commons-@project.version@.jar"
+groupId = "io.ballerina.stdlib"
+artifactId = "temporal-commons"
+version = "@project.version@"

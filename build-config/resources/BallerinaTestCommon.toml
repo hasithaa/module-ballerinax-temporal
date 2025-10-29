@@ -1,0 +1,32 @@
+[package]
+org = "ballerina"
+name = "@package.name@"
+version = "@toml.version@"
+authors = ["Ballerina"]
+keywords = ["temporal", "test-common"]
+repository = "https://github.com/ballerina-platform/module-ballerinax-temporal"
+license = ["Apache-2.0"]
+distribution = "@project.version@"
+
+[build-options]
+observabilityIncluded = true
+
+[platform.java21]
+graalvmCompatible = true
+
+[[platform.java21.dependency]]
+path = "../../native/build/libs/temporal-native-@project.version@.jar"
+groupId = "io.ballerina.stdlib"
+artifactId = "temporal-native"
+version = "@project.version@"
+
+[[platform.java21.dependency]]
+path = "../../commons/build/libs/temporal-commons-@project.version@.jar"
+groupId = "io.ballerina.stdlib"
+artifactId = "temporal-commons"
+version = "@project.version@"
+
+[[platform.java21.dependency]]
+groupId = "io.temporal"
+artifactId = "temporal-sdk"
+version = "1.20.0"
