@@ -11,6 +11,9 @@ distribution-version = "2201.12.10"
 org = "ballerina"
 name = "jballerina.java"
 version = "0.0.0"
+modules = [
+	{org = "ballerina", packageName = "jballerina.java", moduleName = "jballerina.java"}
+]
 
 [[package]]
 org = "ballerina"
@@ -46,6 +49,7 @@ org = "ballerinax"
 name = "temporal"
 version = "1.0.0"
 dependencies = [
+	{org = "ballerina", name = "jballerina.java"},
 	{org = "ballerina", name = "workflow"},
 	{org = "ballerinai", name = "observe"}
 ]
