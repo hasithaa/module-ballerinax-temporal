@@ -21,6 +21,15 @@ dependencies = [
 ]
 
 [[package]]
+org = "ballerina"
+name = "workflow"
+version = "0.1.0"
+modules = [
+	{org = "ballerina", packageName = "workflow", moduleName = "workflow"},
+	{org = "ballerina", packageName = "workflow", moduleName = "workflow.rdbms"}
+]
+
+[[package]]
 org = "ballerinai"
 name = "observe"
 version = "0.0.0"
@@ -37,6 +46,7 @@ org = "ballerinax"
 name = "temporal"
 version = "1.0.0"
 dependencies = [
+	{org = "ballerina", name = "workflow"},
 	{org = "ballerinai", name = "observe"}
 ]
 modules = [
