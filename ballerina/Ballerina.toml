@@ -7,14 +7,18 @@ keywords = ["temporal", "workflow", "orchestration"]
 repository = "https://github.com/ballerina-platform/module-ballerinax-temporal"
 license = ["Apache-2.0"]
 distribution = "1.0.0-SNAPSHOT"
-export = ["temporal"]
-
 
 [build-options]
 observabilityIncluded = true
 
 [platform.java21]
 graalvmCompatible = true
+
+[[dependency]]
+org = "ballerina"
+name="workflow"
+version="0.1.0"
+repository="local"
 
 [[platform.java21.dependency]]
 path = "../native/build/libs/temporal-native-1.0.0-SNAPSHOT.jar"

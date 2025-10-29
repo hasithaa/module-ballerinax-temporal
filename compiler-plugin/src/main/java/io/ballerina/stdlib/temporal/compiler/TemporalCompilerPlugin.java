@@ -18,16 +18,24 @@
 
 package io.ballerina.stdlib.temporal.compiler;
 
+import io.ballerina.projects.plugins.CompilerPlugin;
+import io.ballerina.projects.plugins.CompilerPluginContext;
+
 /**
  * Placeholder compiler plugin for Temporal module.
  * This is a minimal implementation for build success.
  */
-public class TemporalCompilerPlugin {
+public class TemporalCompilerPlugin extends CompilerPlugin {
     
     /**
-     * Placeholder initialization method.
+     * Constructor for TemporalCompilerPlugin.
      */
-    public void init() {
+    public TemporalCompilerPlugin() {
+        // Placeholder implementation
+    }
+    
+    @Override
+    public void init(CompilerPluginContext context) {
         // Placeholder implementation
     }
 }

@@ -38,14 +38,16 @@ include ':checkstyle'
 include ':temporal-native'
 include ':temporal-compiler-plugin'
 include ':temporal-ballerina'
-// include ':temporal-ballerina-tests'  // Disabled for placeholder build
+// TODO: Add back when ballerina-tests module is properly configured
+// include ':temporal-ballerina-tests'
 include ':temporal-commons'
 
 project(':checkstyle').projectDir = file("build-config${File.separator}checkstyle")
 project(':temporal-native').projectDir = file("native")
 project(':temporal-compiler-plugin').projectDir = file("compiler-plugin")
 project(':temporal-ballerina').projectDir = file("ballerina")
-// project(':temporal-ballerina-tests').projectDir = file("ballerina-tests")  // Disabled for placeholder build
+// TODO: Add back when ballerina-tests module is properly configured
+// project(':temporal-ballerina-tests').projectDir = file("ballerina-tests")
 project(':temporal-commons').projectDir = file("commons")
 
 gradleEnterprise {

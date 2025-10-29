@@ -108,7 +108,8 @@ task build {
     dependsOn(':temporal-compiler-plugin:build')
     dependsOn(':temporal-native:build')
     dependsOn(':temporal-ballerina:build')
-    // dependsOn(':temporal-ballerina-tests:test')  // Disabled for placeholder build
+    // TODO: Add back when ballerina-tests module is properly configured
+    // dependsOn(':temporal-ballerina-tests:test')
 }
 
 release {

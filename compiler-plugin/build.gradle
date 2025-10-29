@@ -81,12 +81,7 @@ jar {
 }
 
 compileJava {
-    doFirst {
-        options.compilerArgs = [
-                '--module-path', classpath.asPath,
-        ]
-        classpath = files()
-    }
+    // Regular classpath-based compilation
 }
 
 publishing {

@@ -99,10 +99,5 @@ test.dependsOn ":${packageName}-native:build"
 test.dependsOn ":${packageName}-compiler-plugin:build"
 test.dependsOn ":${packageName}-commons:build"
 
-// Temporarily disable test task for placeholder build
-test.enabled = false
-// Temporarily disable build task for placeholder build
-build.enabled = false
-
 publishToMavenLocal.dependsOn build
 publish.dependsOn build
