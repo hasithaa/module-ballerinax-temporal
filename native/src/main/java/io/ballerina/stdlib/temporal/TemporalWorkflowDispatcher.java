@@ -17,10 +17,7 @@
  */
 package io.ballerina.stdlib.temporal;
 
-import io.ballerina.runtime.api.values.BArray;
-import io.ballerina.runtime.api.values.BMap;
 import io.ballerina.runtime.api.values.BObject;
-import io.ballerina.runtime.api.values.BString;
 import io.temporal.common.converter.EncodedValues;
 import io.temporal.workflow.DynamicWorkflow;
 import io.temporal.workflow.Workflow;
@@ -93,35 +90,5 @@ public class TemporalWorkflowDispatcher implements DynamicWorkflow {
         Object[] argsArray = TypeConversionUtils.convertEncodedValuesToBallerina(engine, workflowType, queryName, args);
 
         return BRuntimeHandler.executeWorkflow(svc, queryName, argsArray);
-    }
-
-    /**
-     * Converts EncodedValues to Ballerina-compatible objects based on workflow model data.
-     * Uses parameter type information from the workflow definition to perform type-safe conversion.
-     */
-    private Object[] convertEncodedValuesToBallerina(WorkerEngine engine, String workflowType,
-                                                   String methodName, EncodedValues args) {
-        return TypeConversionUtils.convertEncodedValuesToBallerina(engine, workflowType, methodName, args);
-    }
-
-    /**
-     * Extracts method parameters from workflow model data.
-     */
-    private BArray extractMethodParameters(BMap<BString, Object> modelData, String methodName) {
-        return TypeConversionUtils.extractMethodParameters(modelData, methodName);
-    }
-
-    /**
-     * Converts a single EncodedValue based on its parameter type.
-     */
-    private Object convertEncodedValueByType(EncodedValues args, int index, Object paramType) {
-        return TypeConversionUtils.convertEncodedValueByType(args, index, paramType);
-    }
-
-    /**
-     * Converts an EncodedValue based on Ballerina type name.
-     */
-    private Object convertByTypeName(EncodedValues args, int index, String typeName) {
-        return TypeConversionUtils.convertByTypeName(args, index, typeName);
     }
 }
