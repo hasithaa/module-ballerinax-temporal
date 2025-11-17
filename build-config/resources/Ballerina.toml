@@ -6,7 +6,7 @@ authors = ["Ballerina"]
 keywords = ["temporal", "workflow", "orchestration"]
 repository = "https://github.com/ballerina-platform/module-ballerinax-temporal"
 license = ["Apache-2.0"]
-distribution = "@project.version@"
+distribution = "2201.13.0"
 
 [build-options]
 observabilityIncluded = true

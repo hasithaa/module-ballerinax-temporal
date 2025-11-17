@@ -30,11 +30,14 @@ dependencies {
     
     implementation group: 'org.ballerinalang', name: 'ballerina-runtime', version: "${ballerinaLangVersion}"
     implementation project(':temporal-commons')
+
+    implementation group: 'io.ballerina.stdlib', name: 'workflow-commons', version: "${ballerinaWorkflowVersion}"
     
     // Temporal SDK dependencies
-    implementation group: 'io.temporal', name: 'temporal-sdk', version: '1.20.0'
-    implementation group: 'io.temporal', name: 'temporal-serviceclient', version: '1.20.0'
-    
+    implementation (group: 'io.temporal', name: 'temporal-sdk', version: '1.20.0') {
+        exclude group: 'io.grpc', module: 'grpc-context'
+    }
+
     // Logging
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.36'
     implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.12'
@@ -95,11 +98,21 @@ test {
 
 compileJava {
     doFirst {
+        // Separate temporal-serviceclient from the module path and patch it into temporal.sdk
+        def serviceClientJar = configurations.compileClasspath.find { it.name.startsWith('temporal-serviceclient') }
+        def modulePath = classpath.filter { !it.name.startsWith('temporal-serviceclient') }
+        
         options.compilerArgs = [
-                '--module-path', classpath.asPath,
+                '--module-path', modulePath.asPath,
+                '--patch-module', "temporal.sdk=${serviceClientJar}",
+                '--add-exports', 'temporal.sdk/io.temporal.serviceclient=io.ballerina.stdlib.temporal.runtime'
         ]
         classpath = files()
     }
+}
+
+repositories {
+    mavenLocal()
 }
 
 publishing {

@@ -1,4 +1,4 @@
-// Copyright (c) 2024, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+// Copyright (c) 2025, WSO2 LLC. (https://www.wso2.com) All Rights Reserved.
 //
 // WSO2 LLC. licenses this file to you under the Apache License,
 // Version 2.0 (the "License"); you may not use this file except
@@ -14,5 +14,12 @@
 // specific language governing permissions and limitations
 // under the License.
 
-# Default Temporal service URL
-const DEFAULT_SERVICE_URL = "http://localhost:7233";
+import ballerina/jballerina.java;
+
+function init() {
+    setModule();
+}
+
+function setModule() = @java:Method {
+    'class: "io.ballerina.stdlib.temporal.runtime.utils.ModuleUtils"
+} external;

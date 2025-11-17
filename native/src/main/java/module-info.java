@@ -16,20 +16,12 @@
  * under the License.
  */
 
-package io.ballerina.stdlib.temporal.runtime;
+module io.ballerina.stdlib.temporal.runtime {
+    requires io.ballerina.runtime;
+    requires java.logging;
+    requires temporal.sdk;
+    requires org.slf4j;
+    requires io.ballerina.stdlib.workflow.runtime.commons;
 
-/**
- * Placeholder class for temporal native runtime.
- * 
- * @since 1.0.0
- */
-public class TemporalNativeRuntime {
-    
-    /**
-     * Placeholder method for temporal runtime initialization.
-     */
-    public static void initialize() {
-        // Placeholder implementation
-    }
+    exports io.ballerina.stdlib.temporal;
 }
-

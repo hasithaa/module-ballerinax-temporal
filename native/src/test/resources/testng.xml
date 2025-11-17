@@ -5,7 +5,7 @@
         <classes>
             <class name="io.ballerina.stdlib.temporal.runtime.client.ClientTest"/>
             <class name="io.ballerina.stdlib.temporal.runtime.workflow.WorkflowContextTest"/>
-            <class name="io.ballerina.stdlib.temporal.runtime.activity.ActivityContextTest"/>
+            <class name="io.ballerina.stdlib.temporal.runtime.api.ActivityContextTest"/>
         </classes>
     </test>
 </suite>
